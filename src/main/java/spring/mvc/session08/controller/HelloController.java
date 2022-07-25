@@ -103,8 +103,8 @@ public class HelloController {
 			consumes = "application/json;charset=UTF-8",
 			produces = "application/json;charset=UTF-8")
 	@ResponseBody
-	public String createUser(@RequestBody String userJson) {
-		return userJson;
+	public User createUser(@RequestBody User user) {
+		return user;
 	}
 }
 
