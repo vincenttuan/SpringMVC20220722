@@ -132,12 +132,31 @@ public class HelloController {
 	
 	/*
 	 * 10. @RequestParam + @PathVariable (Lab 練習)
-	 * 子路徑：/mvc/hello/calc/add?x=30&y=20  -> Result：50
-	 * 子路徑：/mvc/hello/calc/sub?x=30&y=20  -> Result：10
-	 * 子路徑：/mvc/hello/calc/sub?y=20       -> Result：-20
-	 * 子路徑：/mvc/hello/calc/add            -> Result：0
+	 * 執行路徑：/mvc/hello/calc/add?x=30&y=20  -> Result：50
+	 * 執行路徑：/mvc/hello/calc/sub?x=30&y=20  -> Result：10
+	 * 執行路徑：/mvc/hello/calc/sub?y=20       -> Result：-20
+	 * 執行路徑：/mvc/hello/calc/add            -> Result：0
 	 */
 	// 請設計方法 api
+	@RequestMapping(value = "/calc/{exp}")
+	@ResponseBody
+	public String calcExp(@PathVariable("exp") String exp,
+			@RequestParam(value="x", required = false, defaultValue = "0") Integer x,
+			@RequestParam(value="y", required = false, defaultValue = "0") Integer y) {
+		int result = 0;
+		switch (exp) {
+			case "add":
+				result = x + y;
+				break;
+			case "sub":
+				result = x - y;
+				break;
+			default:
+				return "exp path value error!";
+		}
+		return String.format("Result: %d", result);
+	}
+	
 }
 
 
