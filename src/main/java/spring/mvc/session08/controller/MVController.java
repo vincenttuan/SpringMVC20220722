@@ -1,6 +1,7 @@
 package spring.mvc.session08.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -35,6 +36,17 @@ public class MVController {
 		mv.addObject("data2", "Hello Model and View II");
 		mv.addObject("data3", "Hello Model and View III");
 		return mv;
+	}
+	
+	// 宣告 Model 參數, 並調用 addAttribute()
+	// 回傳值就是 view 的路徑 (String 型態)
+	// 要配置 springmvc-servlet.xml
+	@GetMapping("/case4")
+	public String case4(Model model) {
+		model.addAttribute("data", "Hello Model and View I");
+		model.addAttribute("data2", "Hello Model and View II");
+		model.addAttribute("data3", "Hello Model and View III");
+		return "show_data"; // 取代 /WEB-INF/view/show_data.jsp
 	}
 	
 }
