@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class MVController {
 	
 	@GetMapping("/case1")
-	//@RequestMapping(method = {RequestMethod.GET})
+	//@RequestMapping(value="/case1", method = {RequestMethod.GET})
 	public ModelAndView case1() {
 		String data = "Hello Model and View";  // 資料(Model)
 		String view = "/WEB-INF/view/show_data.jsp"; // 渲染(View)
