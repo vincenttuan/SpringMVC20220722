@@ -20,4 +20,11 @@ public class MVController {
 		return mv;
 	}
 	
+	@GetMapping("/case2")
+	public ModelAndView case2() {
+		String data = "Hello Model and View";  // 資料(Model)
+		String view = "/WEB-INF/view/show_data.jsp"; // 渲染(View)
+		return new ModelAndView(view, "data", data);
+	}
+	
 }
