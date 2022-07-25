@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -105,6 +106,18 @@ public class HelloController {
 	@ResponseBody
 	public User createUser(@RequestBody User user) {
 		return user;
+	}
+	
+	/*
+	 * 8. 路徑參數 @PathVariable
+	 * 執行路徑: /mvc/hello/exam/75 -> 印出結果: 75 pass
+	 * 執行路徑: /mvc/hello/exam/45 -> 印出結果: 45 fail
+	 * */
+	@RequestMapping(value = "/exam/{score}")
+	@ResponseBody
+	public String examScore(@PathVariable("score") Integer score) {
+		return String.format("%d %s", score, (score>=60)?"pass":"fail");
+		
 	}
 }
 
