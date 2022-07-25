@@ -117,8 +117,27 @@ public class HelloController {
 	@ResponseBody
 	public String examScore(@PathVariable("score") Integer score) {
 		return String.format("%d %s", score, (score>=60)?"pass":"fail");
-		
 	}
+	
+	/*
+	 * 9. 路徑參數 @PathVariable (萬用字元: * 任意多字, ? 任意一字)
+	 * 執行路徑: /mvc/hello/any/abc/java8
+	 * 執行路徑: /mvc/hello/any/defghi/java9
+	 * */
+	@RequestMapping(value = "/any/*/java?")
+	@ResponseBody
+	public String any() {
+		return "Hello any";
+	}
+	
+	/*
+	 * 10. @RequestParam + @PathVariable (Lab 練習)
+	 * 子路徑：/mvc/hello/calc/add?x=30&y=20  -> Result：50
+	 * 子路徑：/mvc/hello/calc/sub?x=30&y=20  -> Result：10
+	 * 子路徑：/mvc/hello/calc/sub?y=20       -> Result：-20
+	 * 子路徑：/mvc/hello/calc/add            -> Result：0
+	 */
+	// 請設計方法 api
 }
 
 
