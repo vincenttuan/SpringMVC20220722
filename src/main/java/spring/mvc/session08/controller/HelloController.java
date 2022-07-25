@@ -99,10 +99,12 @@ public class HelloController {
 	 * }
 	 * 執行路徑: /mvc/hello/create/user
 	 * */
-	@RequestMapping(value = "/create/user")
+	@RequestMapping(value = "/create/user",
+			consumes = "application/json;charset=UTF-8",
+			produces = "application/json;charset=UTF-8")
 	@ResponseBody
-	public User createUser(@RequestBody User user) {
-		return user;
+	public String createUser(@RequestBody String userJson) {
+		return userJson;
 	}
 }
 
