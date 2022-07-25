@@ -2,13 +2,17 @@ package spring.mvc.session08.controller;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import spring.mvc.session08.entity.User;
 
 @RequestMapping("/mv")
 @Controller
@@ -57,9 +61,30 @@ public class MVController {
 	@GetMapping("/case5")
 	public String case5(Model model) {
 		List<String> names = Arrays.asList("John", "Mary", "Helen");
-		names.add("Bob");
+		Map<String, Integer> fruits = new LinkedHashMap<>();
+		fruits.put("watermelon", 100);
+		fruits.put("mango", 80);
 		model.addAttribute("data", names);
+		model.addAttribute("data2", fruits);
+		model.addAttribute("data3", new User());
 		return "show_data";
 	}
+	
+	// 重定向
+	// redirect: 由 server 端發出重定向命令(放在 header 中)由 client 端去執行
+	// 不論內網或外網都可以指派
+	@GetMapping("/case6")
+	public String case6() {
+		return "redirect:/index.jsp"; // 重定向到首頁
+	}
+	
+	@GetMapping("/case7")
+	public String case7() {
+		// http://localhost:8080/spring.mvc/mvc/mv/case7
+		// http://localhost:8080/spring.mvc/mvc/hello/welcome
+		//return "redirect:../hello/welcome"; // 重定向到其他 controller
+		return "redirect:/mvc/hello/welcome"; // 重定向到其他 controller
+	}
+	
 	
 }
