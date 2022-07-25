@@ -8,6 +8,8 @@
 </head>
 <body>
 	<h1>Show data</h1>
-	data: ${ data } <p />
+	data:  ${ data } <p />
+	data1: ${ data2 } <p />
+	data2: ${ data3 } <p />
 </body>
 </html>

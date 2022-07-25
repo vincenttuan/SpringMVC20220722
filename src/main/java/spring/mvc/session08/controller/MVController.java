@@ -22,9 +22,19 @@ public class MVController {
 	
 	@GetMapping("/case2")
 	public ModelAndView case2() {
-		String data = "Hello Model and View";  // 資料(Model)
+		String data = "Hello Model and View II";  // 資料(Model)
 		String view = "/WEB-INF/view/show_data.jsp"; // 渲染(View)
 		return new ModelAndView(view, "data", data);
+	}
+	
+	@GetMapping("/case3")
+	public ModelAndView case3() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/WEB-INF/view/show_data.jsp");
+		mv.addObject("data", "Hello Model and View I");
+		mv.addObject("data2", "Hello Model and View II");
+		mv.addObject("data3", "Hello Model and View III");
+		return mv;
 	}
 	
 }
