@@ -98,6 +98,7 @@ public class HelloController {
 	 *     "score": 90.5,
 	 *     "pass":true
 	 * }
+	 * Client Header 端要加入 Content-Type: application/json
 	 * 執行路徑: /mvc/hello/create/user
 	 * */
 	@RequestMapping(value = "/create/user",
