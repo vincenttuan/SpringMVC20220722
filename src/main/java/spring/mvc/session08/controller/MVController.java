@@ -1,5 +1,9 @@
 package spring.mvc.session08.controller;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,6 +51,15 @@ public class MVController {
 		model.addAttribute("data2", "Hello Model and View II");
 		model.addAttribute("data3", "Hello Model and View III");
 		return "show_data"; // 取代 /WEB-INF/view/show_data.jsp
+	}
+	
+	// Model 是數組/集合資料: List, Map etc...
+	@GetMapping("/case5")
+	public String case5(Model model) {
+		List<String> names = Arrays.asList("John", "Mary", "Helen");
+		names.add("Bob");
+		model.addAttribute("data", names);
+		return "show_data";
 	}
 	
 }
