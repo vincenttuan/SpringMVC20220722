@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -86,6 +87,22 @@ public class HelloController {
 	@ResponseBody
 	public String getUser(User user) {
 		return user.toString();
+	}
+	
+	/*
+	 * 7. 在 body 中傳送 json 資料
+	 * {
+	 *     "name": "John",
+	 *     "age": 18,
+	 *     "score": 90.5,
+	 *     "pass":true
+	 * }
+	 * 執行路徑: /mvc/hello/create/user
+	 * */
+	@RequestMapping(value = "/create/user")
+	@ResponseBody
+	public User createUser(@RequestBody User user) {
+		return user;
 	}
 }
 
