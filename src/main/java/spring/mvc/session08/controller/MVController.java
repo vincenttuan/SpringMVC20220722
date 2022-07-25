@@ -10,7 +10,11 @@ public class MVController {
 	
 	public ModelAndView case1() {
 		String data = "Hello Model and View";
-		String view = ""
+		String view = "/WEB-INF/view/show_data.jsp";
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("data", data);
+		mv.setViewName(view);
+		return mv;
 	}
 	
 }
