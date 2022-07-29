@@ -22,14 +22,24 @@
 		<thead>
 			<tr>
 				<th>#</th>
-				<th>Lotto</th>
+				<th>號碼 1</th>
+				<th>號碼 2</th>
+				<th>號碼 3</th>
+				<th>號碼 4</th>
+				<th>號碼 5</th>
+				<th>更新 (Update)</th>
+				<th>刪除 (Delete)</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach varStatus="status" var="lotto" items="${ lottos }">
 				<tr>
 					<td>${ status.index }</td>
-					<td>${ lotto }</td>
+					<c:forEach var="num" items="lotto">
+						<td>${ num }</td>
+					</c:forEach>
+					<td></td>
+					<td></td>
 				</tr>
 			</c:forEach>
 		</tbody>
