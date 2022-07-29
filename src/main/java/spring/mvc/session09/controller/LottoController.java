@@ -17,8 +17,8 @@ public class LottoController {
 	private List<Set<Integer>> lottos = new CopyOnWriteArrayList<>();
 	
 	// Lotto 主畫面
-	//@GetMapping("/get")
-	@RequestMapping(value = "/get", method = RequestMethod.GET)
+	//@GetMapping("/")
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index() {
 		return "session09/lotto";
 	}
