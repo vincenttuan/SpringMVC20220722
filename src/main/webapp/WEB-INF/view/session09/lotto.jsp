@@ -36,7 +36,7 @@
 				<tr>
 					<td>${ status.index }</td>
 					<c:forEach var="num" items="${ lotto }">
-						<td>${ num }</td>
+						<td style='text-align: center'>${ num }</td>
 					</c:forEach>
 					<td></td>
 					<td></td>
