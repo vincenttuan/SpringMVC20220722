@@ -22,6 +22,14 @@
 	<p />
 	最新電腦選號: ${ lotto }
 	<p />
+	統計每一個號碼出現的次數: 
+	<button type="button"
+		onclick="window.location.href='/spring.mvc/mvc/lotto/stat';"
+		class="pure-button pure-button-primary">
+		統計運算
+	</button>
+	${ stat }
+	<p />
 	歷史紀錄
 	<table class="pure-table pure-table-bordered">
 		<thead>
