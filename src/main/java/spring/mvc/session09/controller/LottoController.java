@@ -11,6 +11,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -39,6 +40,20 @@ public class LottoController {
 		return "session09/lotto";
 	}
 	
+	// 更新指定位置的電腦選號
+	@RequestMapping(value = "/update/{index}", method = RequestMethod.GET)
+	public String update(Model model, @PathVariable("index") int index) {
+		// 重新取得樂透號碼
+		Set<Integer> lotto = getRandomLotto();
+		// 更新指定位置的樂透號碼
+		lottos.set(index, lotto);
+		// 將必要資料傳給 jsp 呈現/處理
+		model.addAttribute("lotto", lotto); // 最新電腦選號
+		model.addAttribute("lottos", lottos); // 樂透號碼歷史紀錄
+		return "session09/lotto";
+	}
+	
+	
 	// 隨機生成最新電腦選號
 	private Set<Integer> getRandomLotto() {
 		Random r = new Random();
@@ -49,5 +64,7 @@ public class LottoController {
 		}
 		return lotto;
 	}
+	
+	
 	
 }
