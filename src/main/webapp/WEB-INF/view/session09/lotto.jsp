@@ -7,6 +7,11 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css">
 <meta charset="UTF-8">
 <title>Lotto</title>
+<style type="text/css">
+	td, th {
+		text-align: center;
+	}
+</style>
 </head>
 <body style="padding: 15px">
 	<button type="button"
@@ -36,7 +41,7 @@
 				<tr>
 					<td>${ status.index }</td>
 					<c:forEach var="num" items="${ lotto }">
-						<td style='text-align: center'>${ num }</td>
+						<td>${ num }</td>
 					</c:forEach>
 					<td></td>
 					<td></td>
