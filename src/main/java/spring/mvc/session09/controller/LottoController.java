@@ -1,6 +1,7 @@
 package spring.mvc.session09.controller;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -75,11 +76,16 @@ public class LottoController {
 		Map<Integer, Long> stat = nums.stream()
 									  .collect(groupingBy(identity(), counting()));	
 		
+		// 3. 加上排序
+		Map<Integer, Long> stat2 = new LinkedHashMap<>();
+		stat.entrySet().stream()
+			.sorted(Map.Entry.<Integer, Long>comparingByValue().reversed())
+			.forEachOrdered(e -> stat2.put(e.getKey(), e.getValue()));
 		
 		model.addAttribute("lotto", null); // 最新電腦選號
 		model.addAttribute("lottos", lottos); // 樂透號碼歷史紀錄
 		model.addAttribute("stat", stat); // 統計資料
-		model.addAttribute("stat2", stat); // 統計資料
+		model.addAttribute("stat2", stat2); // 統計資料
 		return "session09/lotto";
 	}
 	
