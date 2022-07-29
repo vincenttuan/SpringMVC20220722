@@ -4,14 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css">
-<meta charset="UTF-8">
-<title>Lotto</title>
-<style type="text/css">
-	td, th {
-		text-align: center;
-	}
-</style>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css">
+	<meta charset="UTF-8">
+	<title>Lotto</title>
+	<style type="text/css">
+		td, th {
+			text-align: center;
+		}
+	</style>
 </head>
 <body style="padding: 15px">
 	<button type="button"
@@ -43,8 +43,20 @@
 					<c:forEach var="num" items="${ lotto }">
 						<td>${ num }</td>
 					</c:forEach>
-					<td></td>
-					<td></td>
+					<td>
+						<button type="button"
+							onclick="window.location.href='/spring.mvc/mvc/lotto/update/${ status.index }';"
+							class="pure-button pure-button-primary">
+							更新
+						</button>
+					</td>
+					<td>
+						<button type="button"
+							onclick="window.location.href='/spring.mvc/mvc/lotto/delete/${ status.index }';"
+							class="pure-button pure-button-primary">
+							刪除
+						</button>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
