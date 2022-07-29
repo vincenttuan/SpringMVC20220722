@@ -23,7 +23,8 @@ public class LottoController {
 	// Lotto 主畫面
 	//@GetMapping("/")
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String index() {
+	public String index(Model model) {
+		model.addAttribute("lottos", lottos); // 樂透號碼歷史紀錄
 		return "session09/lotto";
 	}
 	
@@ -47,10 +48,7 @@ public class LottoController {
 		Set<Integer> lotto = getRandomLotto();
 		// 更新指定位置的樂透號碼
 		lottos.set(index, lotto);
-		// 將必要資料傳給 jsp 呈現/處理
-		model.addAttribute("lotto", lotto); // 最新電腦選號
-		model.addAttribute("lottos", lottos); // 樂透號碼歷史紀錄
-		return "session09/lotto";
+		return index(model);
 	}
 	
 	// 刪除指定位置的電腦選號
@@ -58,10 +56,7 @@ public class LottoController {
 	public String delete(Model model, @PathVariable("index") int index) {
 		// 刪除指定位置的樂透號碼
 		lottos.remove(index);
-		// 將必要資料傳給 jsp 呈現/處理
-		model.addAttribute("lotto", null); // 最新電腦選號
-		model.addAttribute("lottos", lottos); // 樂透號碼歷史紀錄
-		return "session09/lotto";
+		return index(model);
 	}
 	
 	
