@@ -35,7 +35,7 @@
 			<c:forEach varStatus="status" var="lotto" items="${ lottos }">
 				<tr>
 					<td>${ status.index }</td>
-					<c:forEach var="num" items="lotto">
+					<c:forEach var="num" items="${ lotto }">
 						<td>${ num }</td>
 					</c:forEach>
 					<td></td>
