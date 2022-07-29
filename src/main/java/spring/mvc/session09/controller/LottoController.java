@@ -48,7 +48,7 @@ public class LottoController {
 		Set<Integer> lotto = getRandomLotto();
 		// 更新指定位置的樂透號碼
 		lottos.set(index, lotto);
-		return index(model); // return "redirect:/mvc/lotto/";
+		return "redirect:/mvc/lotto/";
 	}
 	
 	// 刪除指定位置的電腦選號
@@ -56,7 +56,7 @@ public class LottoController {
 	public String delete(Model model, @PathVariable("index") int index) {
 		// 刪除指定位置的樂透號碼
 		lottos.remove(index);
-		return index(model); // return "redirect:/mvc/lotto/";
+		return "redirect:/mvc/lotto/";
 	}
 	
 	
