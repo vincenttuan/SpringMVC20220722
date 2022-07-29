@@ -75,9 +75,11 @@ public class LottoController {
 		Map<Integer, Long> stat = nums.stream()
 									  .collect(groupingBy(identity(), counting()));	
 		
+		
 		model.addAttribute("lotto", null); // 最新電腦選號
 		model.addAttribute("lottos", lottos); // 樂透號碼歷史紀錄
 		model.addAttribute("stat", stat); // 統計資料
+		model.addAttribute("stat2", stat); // 統計資料
 		return "session09/lotto";
 	}
 	

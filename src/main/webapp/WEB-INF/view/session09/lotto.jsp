@@ -48,6 +48,25 @@
 		</tbody>
 	</table>
 	<p />
+	<table class="pure-table pure-table-bordered">
+		<thead>
+			<tr>
+				<th nowrap>號碼</th>
+				<c:forEach var="s" items="${ stat2 }">
+					<th>${ s.key }</th>
+				</c:forEach>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td nowrap>次數</td>
+				<c:forEach var="s" items="${ stat2 }">
+					<td>${ s.value }</td>
+				</c:forEach>
+			</tr>
+		</tbody>
+	</table>
+	<p />
 	歷史紀錄
 	<table class="pure-table pure-table-bordered">
 		<thead>
