@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +17,17 @@
 	<p />
 	最新電腦選號: ${ lotto }
 	<p />
-	${ lottos }
+	歷史紀錄
+	<table class="pure-table pure-table-bordered">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Lotto</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
 </body>
 </html>
