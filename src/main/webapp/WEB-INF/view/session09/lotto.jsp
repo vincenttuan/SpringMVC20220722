@@ -26,7 +26,12 @@
 			</tr>
 		</thead>
 		<tbody>
-			
+			<c:forEach varStatus="status" var="lotto" items="${ lottos }">
+				<tr>
+					<td>${ status.index }</td>
+					<td>${ lotto }</td>
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
 </body>
