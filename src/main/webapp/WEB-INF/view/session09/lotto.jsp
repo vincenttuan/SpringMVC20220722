@@ -16,5 +16,6 @@
 	<p />
 	最新電腦選號: ${ lotto }
 	<p />
+	${ lottos }
 </body>
 </html>
