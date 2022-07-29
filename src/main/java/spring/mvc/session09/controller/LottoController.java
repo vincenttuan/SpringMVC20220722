@@ -8,6 +8,11 @@ import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.groupingBy;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -59,6 +64,22 @@ public class LottoController {
 		return "redirect:/mvc/lotto/";
 	}
 	
+	// 統計每一個號碼出現的次數
+	@RequestMapping(value = "/stat", method = RequestMethod.GET)
+	public String stat(Model model) {
+		// 1. 將所有的資料彙集(flatMap 將資料拆散並透過 collect 收集)
+		List<Integer> nums = lottos.stream()
+								   .flatMap(lotto -> lotto.stream()) // Stream<Integer>
+								   .collect(toList());    // List<Integer>
+		// 2. 透過 groupingBy 將資料分組
+		Map<Integer, Long> stat = nums.stream()
+									  .collect(groupingBy(identity(), counting()));	
+		
+		model.addAttribute("lotto", null); // 最新電腦選號
+		model.addAttribute("lottos", lottos); // 樂透號碼歷史紀錄
+		model.addAttribute("stat", nums); // 統計資料
+		return "session09/lotto";
+	}
 	
 	// 隨機生成最新電腦選號
 	private Set<Integer> getRandomLotto() {
