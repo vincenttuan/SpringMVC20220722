@@ -1,9 +1,9 @@
 package spring.mvc.session10.entity;
 
 public class Product {
-	private String productName;
-	private Integer quantity;
-	private Double price;
+	private String productName;  // 商品名稱
+	private Integer quantity; // 數量
+	private Double price; // 價格
 	
 	public String getProductName() {
 		return productName;
