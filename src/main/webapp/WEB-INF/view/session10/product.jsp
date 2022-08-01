@@ -51,7 +51,11 @@
 										onclick="window.location.href='/spring.mvc/mvc/product/${ status.index }';"
 										class="pure-button pure-button-primary">Update</button>
 								</td>
-								<td></td>
+								<td>
+									<button type="button" 
+										onclick="window.location.href='/spring.mvc/mvc/product/${ status.index }?delete=true';"
+										class="pure-button pure-button-primary">delete</button>
+								</td>
 							</tr>
 						</c:forEach>
 					</tbody>
