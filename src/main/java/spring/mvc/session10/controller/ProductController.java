@@ -6,6 +6,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import spring.mvc.session10.entity.Product;
@@ -20,6 +21,14 @@ public class ProductController {
 	public String index(Model model) {
 		model.addAttribute("products", products);
 		return "session10/product";
+	}
+	
+	// 新增商品
+	@PostMapping("/")
+	public String add(Product product, Model model) {
+		products.add(product);
+		model.addAttribute("product", product);
+		return "session10/success";
 	}
 	
 	
