@@ -4,6 +4,7 @@ public class Product {
 	private String productName;
 	private Integer quantity;
 	private Double price;
+	
 	public String getProductName() {
 		return productName;
 	}
@@ -22,6 +23,7 @@ public class Product {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	
 	@Override
 	public String toString() {
 		return "Product [productName=" + productName + ", quantity=" + quantity + ", price=" + price + "]";
