@@ -28,6 +28,12 @@ public class ProductController {
 	public String add(Product product, Model model) {
 		products.add(product);
 		model.addAttribute("product", product);
+		return "redirect:addOk";
+	}
+	
+	// 成功
+	@GetMapping(value = {"/addOk", "/updateOk"})
+	public String success() {
 		return "session10/success";
 	}
 	
