@@ -8,7 +8,7 @@
 		<title>Product 刪除表單</title>
 	</head>
 	<body style="padding: 15px">
-		<form class="pure-form" method="post" onsubmit="return false;" action="/spring.mvc/mvc/product/${ index }">
+		<form class="pure-form" method="post" onsubmit="return confirm('是否要刪除?');" action="/spring.mvc/mvc/product/${ index }">
 			<fieldset>
 				<legend>Product 刪除表單</legend>
 				<input type="hidden" name="_method" id="_method" value="DELETE">
