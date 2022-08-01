@@ -8,6 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Hello <%=new Date() %>
+	<ol>
+		<li>
+			Session 10 Product Lab <br>
+			<a href="/spring.mvc/mvc/product/">/spring.mvc/mvc/product/</a>
+		</li>
+	</ol>
+	
 </body>
 </html>
