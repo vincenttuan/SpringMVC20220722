@@ -5,7 +5,7 @@
 	<head>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css">
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>Product</title>
 	</head>
 	<body style="padding: 15px">
 		<form class="pure-form" method="post" action="/spring.mvc/mvc/product/">
