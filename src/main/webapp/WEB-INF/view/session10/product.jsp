@@ -41,7 +41,8 @@
 								<td>${ product.quantity }</td>
 								<td>${ product.price }</td>
 								<td>
-									<fmt:formatNumber pattern="####,####.0" value="${ product.quantity * product.price }" />
+									<!-- pattern="###,###.0" -->
+									<fmt:formatNumber type="currency" value="${ product.quantity * product.price }" />
 								</td>
 								<td>
 									<button type="button" 
