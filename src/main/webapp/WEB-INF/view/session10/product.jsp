@@ -28,6 +28,7 @@
 						<th>商品名稱</th>
 						<th>商品數量</th>
 						<th>商品價格</th>
+						<th>商品小計</th>
 						<th>修改</th>
 						<th>刪除</th>
 					</thead>
@@ -38,6 +39,7 @@
 								<td>${ product.productName }</td>
 								<td>${ product.quantity }</td>
 								<td>${ product.price }</td>
+								<td>${ product.quantity * product.price }</td>
 								<td>
 									<button type="button" 
 										onclick="window.location.href='/spring.mvc/mvc/product/${ status.index }';"
