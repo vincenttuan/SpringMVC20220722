@@ -5,6 +5,16 @@ public class Product {
 	private Integer quantity; // 數量
 	private Double price; // 價格
 	
+	public Product() {
+		
+	}
+	
+	public Product(String productName, Integer quantity, Double price) {
+		this.productName = productName;
+		this.quantity = quantity;
+		this.price = price;
+	}
+	
 	public String getProductName() {
 		return productName;
 	}

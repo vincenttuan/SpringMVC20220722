@@ -38,7 +38,11 @@
 								<td>${ product.productName }</td>
 								<td>${ product.quantity }</td>
 								<td>${ product.price }</td>
-								<td></td>
+								<td>
+									<button type="button" 
+										onclick="window.location.href='/spring.mvc/mvc/product/${ status.index }';"
+										class="pure-button pure-button-primary">Update</button>
+								</td>
 								<td></td>
 							</tr>
 						</c:forEach>

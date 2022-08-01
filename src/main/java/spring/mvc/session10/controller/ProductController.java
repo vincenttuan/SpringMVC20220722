@@ -17,6 +17,12 @@ import spring.mvc.session10.entity.Product;
 public class ProductController {
 	private List<Product> products = new CopyOnWriteArrayList<>();
 	
+	{
+		products.add(new Product("Java", 100, 500.0));
+		products.add(new Product("Python", 80, 350.0));
+		products.add(new Product("MySQL", 120, 750.0));
+	}
+	
 	// 商品首頁(輸入商品, 查詢所有商品)
 	@GetMapping("/")
 	public String index(Model model) {
