@@ -70,10 +70,12 @@ public class LottoController {
 	public String stat(Model model) {
 		// 1. 將所有的資料彙集(flatMap 將資料拆散並透過 collect 收集)
 		List<Integer> nums = lottos.stream()
+								   .parallel()	
 								   .flatMap(lotto -> lotto.stream()) // Stream<Integer>
 								   .collect(toList());    // List<Integer>
 		// 2. 透過 groupingBy 將資料分組
 		Map<Integer, Long> stat = nums.stream()
+									  .parallel()
 									  .collect(groupingBy(identity(), counting()));	
 		
 		// 3. 加上排序
