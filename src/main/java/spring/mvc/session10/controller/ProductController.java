@@ -60,8 +60,8 @@ public class ProductController {
 	@PutMapping("/{index}")
 	public String update(@PathVariable("index") int index, Product product, RedirectAttributes attr) {
 		products.set(index, product);
-		attr.addAttribute(product);
-		return "redirect:/updateOk";
+		attr.addFlashAttribute("product", product);
+		return "redirect:updateOk";
 	}
 	
 }
