@@ -39,7 +39,9 @@
 								<td>${ status.index }</td>
 								<td>${ product.productName }</td>
 								<td>${ product.quantity }</td>
-								<td>${ product.price }</td>
+								<td>
+									<fmt:formatNumber type="currency" value="${ product.price }" />
+								</td>
 								<td>
 									<!-- pattern="###,###.0" -->
 									<fmt:formatNumber type="currency" value="${ product.quantity * product.price }" />
