@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,7 +22,28 @@
 		<form class="pure-form">
 			<fieldset>
 				<legend>Product 列表</legend>
-				
+				<table class="pure-table pure-table-bordered">
+					<thead>
+						<th>序號</th>
+						<th>商品名稱</th>
+						<th>商品數量</th>
+						<th>商品價格</th>
+						<th>修改</th>
+						<th>刪除</th>
+					</thead>
+					<tbody>
+						<c:forEach varStatus="status" var="product" items="${ products }">
+							<tr>
+								<td>${ status.index }</td>
+								<td>${ product.productName }</td>
+								<td>${ product.quantity }</td>
+								<td>${ product.price }</td>
+								<td></td>
+								<td></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 			</fieldset>
 		</form>
 		
