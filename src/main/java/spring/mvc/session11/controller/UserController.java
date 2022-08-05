@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -38,6 +39,17 @@ public class UserController {
 	public String add(@ModelAttribute User user) {
 		users.add(user);
 		return "redirect:./";
+	}
+	
+	@GetMapping("/{index}")
+	public String get(Model model, @PathVariable int index) {
+		User user = users.get(index);
+		model.addAttribute("_method", "PUT");
+		model.addAttribute("index", index);
+		model.addAttribute("submitButtonName", "修改");
+		model.addAttribute("users", users);
+		model.addAttribute("user", user);
+		return "session11/user";
 	}
 	
 }

@@ -67,7 +67,7 @@
 							</td>
 							<td>${ user.education }</td>
 							<td>${ user.sex }</td>
-							<td>${ user.interest }</td>
+							<td>${ user.interestToString }</td>
 							<td>${ user.resume }</td>
 							<td><a href="javascript:editUser(${ status.index })">編輯</a></td>
 							<td><a href="javascript:deleteUser(${ status.index })">刪除</a></td>
