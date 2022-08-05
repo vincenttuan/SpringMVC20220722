@@ -13,7 +13,14 @@
 	<title>User page</title>
 	<script type="text/javascript">
 		function editUser(index) {
-			window.location.href='${ pageContext.request.contextPath }/mvc/user/' + index;
+			var getUrl = '${ pageContext.request.contextPath }/mvc/user/' + index;
+			window.location.href=getUrl;
+		}
+		
+		function deleteUser(index) {
+			var deleteUrl = '${ pageContext.request.contextPath }/mvc/user/' + index;
+			fetch(deleteUrl, {method: 'DELETE'})
+				.then(() => window.location.href='${ pageContext.request.contextPath }/mvc/user/');
 		}
 	</script>
 </head>
