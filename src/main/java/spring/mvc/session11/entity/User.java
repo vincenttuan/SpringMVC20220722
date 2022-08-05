@@ -19,6 +19,7 @@ public class User {
 	private String sex;
 	private String[] interest;
 	private String resume;
+	
 	public String getName() {
 		return name;
 	}
