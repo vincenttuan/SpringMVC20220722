@@ -62,6 +62,7 @@ public class User {
 	public void setResume(String resume) {
 		this.resume = resume;
 	}
+	
 	@Override
 	public String toString() {
 		return "User [name=" + name + ", age=" + age + ", birth=" + birth + ", education=" + education + ", sex=" + sex
