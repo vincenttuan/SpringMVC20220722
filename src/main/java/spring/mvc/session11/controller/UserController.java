@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import spring.mvc.session11.entity.User;
@@ -56,6 +57,12 @@ public class UserController {
 		model.addAttribute("users", users);
 		model.addAttribute("user", user);
 		return "session11/user";
+	}
+	
+	@PutMapping("/{index}")
+	public String update(@ModelAttribute User user, @PathVariable("index") int index) {
+		users.set(index, user);
+		return "redirect:./";
 	}
 	
 }
