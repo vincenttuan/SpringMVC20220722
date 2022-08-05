@@ -42,7 +42,7 @@
 				 <spform:checkbox path="interest" value="看電影" />看電影
 				 <spform:checkbox path="interest" value="寫程式" />寫程式
 				 <spform:checkbox path="interest" value="飛控" />飛控<p />
-			履歷: <spform:input path="resume" /><p />
+			履歷: <spform:textarea path="resume" /><p />
 			<input type="hidden" id="_method" name="_method" value="${ _method }">
 			<button type="submit" class="pure-button pure-button-primary">${ submitButtonName }</button>
 		</fieldset>
