@@ -53,6 +53,9 @@ public class User {
 	public String[] getInterest() {
 		return interest;
 	}
+	public String getInterestToString() {
+		return interest==null ? "" : Arrays.toString(interest);
+	}
 	public void setInterest(String[] interest) {
 		this.interest = interest;
 	}
