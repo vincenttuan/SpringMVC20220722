@@ -13,6 +13,7 @@
 	<title>User page</title>
 </head>
 <body style="padding: 15px;">
+	<!-- User form -->
 	<spform:form class="pure-form"
 				 method="post"
 				 modelAttribute="user"	
@@ -43,5 +44,9 @@
 		
 		
 	</spform:form>
+	
+	<!-- User list -->
+	${ users }
+	
 </body>
 </html>
