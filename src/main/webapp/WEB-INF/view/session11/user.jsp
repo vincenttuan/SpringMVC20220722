@@ -11,6 +11,11 @@
 	<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
 	<meta charset="UTF-8">
 	<title>User page</title>
+	<script type="text/javascript">
+		function editUser(index) {
+			window.location.href='${ pageContext.request.contextPath }/mvc/user/' + index;
+		}
+	</script>
 </head>
 <body style="padding: 15px;">
 	<!-- User form -->
