@@ -41,6 +41,7 @@
             <param-value>true</param-value>
         </init-param>
     </filter>
+    
     <filter-mapping>
         <filter-name>springUtf8Encoding</filter-name>
         <url-pattern>/mvc/*</url-pattern>
@@ -51,6 +52,7 @@
         <filter-name>HiddenHttpMethodFilter</filter-name>
         <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
     </filter>
+    
     <filter-mapping>
         <filter-name>HiddenHttpMethodFilter</filter-name>
         <url-pattern>/mvc/*</url-pattern>
