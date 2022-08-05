@@ -22,7 +22,7 @@
 	<spform:form class="pure-form"
 				 method="post"
 				 modelAttribute="user"	
-				 action="${ pageContext.request.contextPath }/mvc/user/">
+				 action="${ pageContext.request.contextPath }/mvc/user/${ index }">
 		
 		<fieldset>
 			<legend>User Form</legend>
