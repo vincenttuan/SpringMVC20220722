@@ -1,5 +1,6 @@
 package spring.mvc.session11.controller;
 
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -19,6 +20,10 @@ public class UserController {
 	
 	@GetMapping("/")
 	public String index(Model model, @ModelAttribute User user) {
+		user.setName("Java爪哇");
+		user.setAge(31);
+		user.setBirth(new Date());
+		
 		model.addAttribute("_method", "POST");
 		model.addAttribute("submitButtonName", "新增");
 		model.addAttribute("users", users);
