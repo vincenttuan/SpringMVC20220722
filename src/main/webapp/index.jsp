@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Index Page</title>
 </head>
 <body>
 	<ol>
@@ -16,6 +16,10 @@
 		<li>
 			Session 10 Product Lab <br>
 			<a href="/spring.mvc/mvc/product/">/spring.mvc/mvc/product/</a>
+		</li>
+		<li>
+			Session 11 User Lab <br>
+			<a href="/spring.mvc/mvc/user/">/spring.mvc/mvc/user/</a>
 		</li>
 	</ol>
 	
