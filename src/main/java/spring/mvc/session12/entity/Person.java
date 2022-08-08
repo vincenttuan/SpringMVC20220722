@@ -2,14 +2,31 @@ package spring.mvc.session12.entity;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Range;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Person {
-	
+	@NotNull(message = "姓名不可以是空值")
+	@Size(min = 2, max = 50, message = "名字範圍必須介於2~50個字之間")
 	private String name; // 姓名
 	
+	@NotNull(message = "年齡不可以是空值")
+	@Range(min = 18, max = 99, message = "年齡範圍必須介於18~99歲之間")
 	private Integer age; // 年齡
 	
+	@NotNull(message = "會員的設定不可以是空值")
 	private Boolean member; // 是否是會員
 	
+	@NotNull(message = "生日不可以是空值")
+	@Past(message = "生日不可以大於現在的日期")
+	@JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date birth; // 生日
 
 	public String getName() {
