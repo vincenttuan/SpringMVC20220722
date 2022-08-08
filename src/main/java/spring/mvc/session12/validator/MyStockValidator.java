@@ -40,6 +40,10 @@ public class MyStockValidator implements Validator {
 						myStock.getPrice() <= previousClose * 0.9) {
 					errors.rejectValue("price", "mystock.price.range");
 				}
+				// 買進股數必須是1000的倍數(1000股=1張)
+				if(myStock.getAmount() < 1000 || myStock.getAmount() % 1000 != 0) {
+					errors.rejectValue("amount", "mystock.amount.error");
+				}
 			}
 		} catch (Exception e) {
 			errors.rejectValue("symbol", "yahoo.finance.error");
