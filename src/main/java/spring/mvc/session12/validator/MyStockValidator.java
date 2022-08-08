@@ -29,10 +29,17 @@ public class MyStockValidator implements Validator {
 		// 進階驗證
 		try {
 			Stock stock = YahooFinance.get(myStock.getSymbol());
+			// 股票代號必須要有存在於市場中
 			if(stock == null) {
 				errors.rejectValue("symbol", "mystock.symbol.notFound");
 			} else {
-				
+				// 昨日收盤價
+				double previousClose = stock.getQuote().getPreviousClose().doubleValue();
+				// 驗證買進價格必須是昨日收盤價的±10%之間
+				if(myStock.getPrice() >= previousClose * 1.1 || 
+						myStock.getPrice() <= previousClose * 0.9) {
+					errors.rejectValue("price", "mystock.price.range");
+				}
 			}
 		} catch (Exception e) {
 			errors.rejectValue("symbol", "yahoo.finance.error");
