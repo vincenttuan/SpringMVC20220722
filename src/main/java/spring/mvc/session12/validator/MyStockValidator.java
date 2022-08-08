@@ -35,6 +35,9 @@ public class MyStockValidator implements Validator {
 			} else {
 				// 昨日收盤價
 				double previousClose = stock.getQuote().getPreviousClose().doubleValue();
+				// 最新成交價
+				double price = stock.getQuote().getPrice().doubleValue();
+				
 				// 驗證買進價格必須是昨日收盤價的±10%之間
 				if(myStock.getPrice() != null && (myStock.getPrice() > previousClose * 1.1 || 
 						myStock.getPrice() < previousClose * 0.9)) {
