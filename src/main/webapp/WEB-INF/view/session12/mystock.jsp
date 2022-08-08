@@ -34,6 +34,6 @@
 			</fieldset>
 		
 		</spform:form>
-		${ people }
+		${ stocks }
 	</body>
 </html>
