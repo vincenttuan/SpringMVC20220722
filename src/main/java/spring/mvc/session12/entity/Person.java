@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class Person {
 	@NotEmpty(message = "姓名不可以是空值")
-	//@Size(min = 2, max = 50, message = "名字範圍必須介於2~50個字之間")
+	@Size(min = 2, max = 50, message = "名字範圍必須介於2~50個字之間")
 	private String name; // 姓名
 	
 	@NotNull(message = "年齡不可以是空值")
