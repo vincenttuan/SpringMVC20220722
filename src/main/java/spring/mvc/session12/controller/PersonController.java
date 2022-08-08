@@ -30,6 +30,7 @@ public class PersonController {
 	
 	@PostMapping("/")
 	public String add(Model model, @Valid Person person, BindingResult result) {
+		System.out.println(person);
 		// 驗證結果會存放在 result 中
 		if(result.hasErrors()) {
 			// 若有錯誤發生, 會自動將錯誤訊息傳送到指定的 view 中
