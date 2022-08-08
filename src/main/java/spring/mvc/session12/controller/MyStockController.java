@@ -27,7 +27,7 @@ public class MyStockController {
 	}
 	
 	@PostMapping("/")
-	public String add(Model model, @Valid MyStock myStock, BindingResult result) {
+	public String add(Model model, @ModelAttribute MyStock myStock, BindingResult result) {
 		// 自主驗證錯誤
 		
 		// 自主驗證結果會存放在 result 中
