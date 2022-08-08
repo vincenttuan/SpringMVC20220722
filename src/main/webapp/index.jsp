@@ -11,15 +11,19 @@
 	<ol>
 		<li>
 			Session 09 Lotto Lab <br>
-			<a href="/spring.mvc/mvc/lotto/">/spring.mvc/mvc/lotto/</a>
+			<a href="${ pageContext.request.contextPath }/mvc/lotto/">/spring.mvc/mvc/lotto/</a>
 		</li>
 		<li>
 			Session 10 Product Lab <br>
-			<a href="/spring.mvc/mvc/product/">/spring.mvc/mvc/product/</a>
+			<a href="${ pageContext.request.contextPath }/mvc/product/">/spring.mvc/mvc/product/</a>
 		</li>
 		<li>
 			Session 11 User Lab <br>
-			<a href="/spring.mvc/mvc/user/">/spring.mvc/mvc/user/</a>
+			<a href="${ pageContext.request.contextPath }/mvc/user/">/spring.mvc/mvc/user/</a>
+		</li>
+		<li>
+			Session 12  Person Lab <br>
+			<a href="${ pageContext.request.contextPath }/mvc/person/">/spring.mvc/mvc/person/</a>
 		</li>
 	</ol>
 	
