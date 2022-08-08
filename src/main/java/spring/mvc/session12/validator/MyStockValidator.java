@@ -35,7 +35,7 @@ public class MyStockValidator implements Validator {
 				
 			}
 		} catch (Exception e) {
-			errors.rejectValue("yahoo", "yahoo.finance.error");
+			errors.rejectValue("symbol", "yahoo.finance.error");
 		}
 		
 		
