@@ -19,7 +19,7 @@
 	<body style="padding: 15px;">
 		<spform:form class="pure-form"
 					 method="post"
-					 modelAttribute="mystock"
+					 modelAttribute="myStock"
 					 action="${ pageContext.request.contextPath }/mvc/mystock/">
 			<fieldset>
 				<legend>MyStock form</legend>
