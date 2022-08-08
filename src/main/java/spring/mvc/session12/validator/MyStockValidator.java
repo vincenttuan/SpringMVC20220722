@@ -36,12 +36,12 @@ public class MyStockValidator implements Validator {
 				// 昨日收盤價
 				double previousClose = stock.getQuote().getPreviousClose().doubleValue();
 				// 驗證買進價格必須是昨日收盤價的±10%之間
-				if(myStock.getPrice() > previousClose * 1.1 || 
-						myStock.getPrice() < previousClose * 0.9) {
+				if(myStock.getPrice() != null && (myStock.getPrice() > previousClose * 1.1 || 
+						myStock.getPrice() < previousClose * 0.9)) {
 					errors.rejectValue("price", "mystock.price.range");
 				}
 				// 買進股數必須是1000的倍數(1000股=1張)
-				if(myStock.getAmount() < 1000 || myStock.getAmount() % 1000 != 0) {
+				if(myStock.getAmount() != null && (myStock.getAmount() < 1000 || myStock.getAmount() % 1000 != 0)) {
 					errors.rejectValue("amount", "mystock.amount.error");
 				}
 			}
