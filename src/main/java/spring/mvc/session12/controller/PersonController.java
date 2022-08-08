@@ -18,7 +18,10 @@ public class PersonController {
 	
 	@GetMapping("/")
 	public String index(Model model, @ModelAttribute Person person) {
+		//Person person = new Person();
+		//model.addAttribute("person", person); 
 		model.addAttribute("people", people);
 		return "session12/person";
 	}
+	
 }
