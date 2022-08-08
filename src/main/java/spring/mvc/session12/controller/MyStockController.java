@@ -23,7 +23,7 @@ public class MyStockController {
 	@GetMapping("/")
 	public String index(Model model, @ModelAttribute MyStock myStock) {
 		model.addAttribute("stocks", stocks);
-		return "session12/stock";
+		return "session12/mystock";
 	}
 	
 	@PostMapping("/")
@@ -34,7 +34,7 @@ public class MyStockController {
 		if(result.hasErrors()) {
 			// 若有錯誤發生, 會自動將錯誤訊息傳送到指定的 view 中
 			model.addAttribute("stocks", stocks);
-			return "session12/stock";
+			return "session12/mystock";
 		}
 		stocks.add(myStock);
 		return "redirect:./";
