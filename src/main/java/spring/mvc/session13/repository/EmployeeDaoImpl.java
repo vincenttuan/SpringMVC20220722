@@ -2,9 +2,11 @@ package spring.mvc.session13.repository;
 
 import java.util.List;
 
+import org.simpleflatmapper.jdbc.spring.JdbcTemplateMapperFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Repository;
 
 import spring.mvc.session13.entity.Employee;
@@ -49,8 +51,16 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	@Override
 	public List<Employee> query() {
 		// 使用 SimpleFlatMapper
-		String sql = "select eid, ename, salary, createtime from employee";
-		return null;
+		String sql = "select e.eid, e.ename, e.salary, e.createtime, "
+				   + "j.jid as job_jid, j.jname as job_jname, j.eid as job_eid "
+				   + "from employee e left join job j on e.eid = j.eid";
+		
+		ResultSetExtractor<List<Employee>> resultSetExtractor = 
+				JdbcTemplateMapperFactory.newInstance()
+				.addKeys("eid") // employee 主表的主鍵欄位
+				.newResultSetExtractor(Employee.class);
+		
+		return jdbcTemplate.query(sql, resultSetExtractor);
 	}
 
 	@Override
