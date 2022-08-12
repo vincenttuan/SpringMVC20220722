@@ -48,7 +48,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	@Override
 	public List<Employee> query() {
-		// TODO Auto-generated method stub
+		// 使用 SimpleFlatMapper
+		String sql = "select eid, ename, salary, createtime from employee";
 		return null;
 	}
 
