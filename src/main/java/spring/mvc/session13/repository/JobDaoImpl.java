@@ -52,6 +52,7 @@ public class JobDaoImpl implements JobDao {
 				   + "e.eid as employee_eid, e.ename as employee_ename, "
 				   + "e.salary as employee_salary, e.createtime as employee_createtime "
 				   + "from job j left join employee e on j.eid = e.eid  ";
+		
 		ResultSetExtractor<List<Job>> resultSetExtractor = JdbcTemplateMapperFactory.newInstance()
 				.addKeys("jid")
 				.newResultSetExtractor(Job.class);
