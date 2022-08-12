@@ -3,6 +3,7 @@ package spring.mvc.session13.repository;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -16,32 +17,33 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	@Override
 	public int add(Employee employee) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "insert into employee(ename, salary) values(?, ?)";
+		return jdbcTemplate.update(sql, employee.getEname(), employee.getSalary());
 	}
 
 	@Override
 	public int update(Employee employee) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "update employee set ename=?, salary=? where eid=?";
+		return jdbcTemplate.update(sql, employee.getEname(), employee.getSalary(), employee.getEid());
 	}
 
 	@Override
 	public int delete(Integer eid) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "delete from employee where eid=?";
+		return jdbcTemplate.update(sql, eid);
 	}
 
 	@Override
 	public int getCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "select count(*) from employee";
+		return jdbcTemplate.queryForObject(sql, Integer.class);
 	}
 
 	@Override
 	public Employee get(Integer eid) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select eid, ename, salary, createtime from employee where eid=?";
+		Object[] args = {eid};
+		return jdbcTemplate.queryForObject(sql, args, new BeanPropertyRowMapper<Employee>(Employee.class));
 	}
 
 	@Override
