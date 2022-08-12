@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.simpleflatmapper.jdbc.spring.JdbcTemplateMapperFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Repository;
@@ -18,32 +19,33 @@ public class JobDaoImpl implements JobDao {
 
 	@Override
 	public int add(Job job) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "insert into job (jname, eid) values(?, ?)";
+		return jdbcTemplate.update(sql, job.getJname(), job.getEid());
 	}
 
 	@Override
 	public int update(Job job) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "update job set jname=?, eid=? where jid = ?";
+		return jdbcTemplate.update(sql, job.getJname(), job.getEid(), job.getJid());
 	}
 
 	@Override
 	public int delete(Integer jid) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "delete from job where jid = ?";
+		return jdbcTemplate.update(sql, jid);
 	}
 
 	@Override
 	public int getCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "select count(*) from job";
+		return jdbcTemplate.queryForObject(sql, Integer.class);
 	}
 
 	@Override
 	public Job get(Integer jid) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select jid, jname, eid from job where jid=?";
+		Object[] args = {jid};
+		return jdbcTemplate.queryForObject(sql, args, new BeanPropertyRowMapper<Job>(Job.class));
 	}
 
 	@Override
