@@ -44,6 +44,8 @@
 						<button type="submit" ${ _method eq 'PUT'?'':'disabled' } class="pure-button pure-button-primary">
 							修改
 						</button>
+						<p />
+						<spform:errors path="*" cssClass="error" />
 					</fieldset>
 				</spform:form>
 			</td>
