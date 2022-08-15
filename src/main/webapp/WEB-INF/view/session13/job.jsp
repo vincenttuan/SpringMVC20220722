@@ -39,13 +39,20 @@
 								<th rowspan="2" valign="middle" align="center">名稱</th>
 								<th colspan="2" align="center">員工資料</th>
 							</tr>
-							<tr>
+							<tr style="border-top: 1px solid lightgray;">
 								<th>員編</th>
 								<th>姓名</th>
-							</tr>	
+							</tr>
 						</thead>
 						<tbody>
-						
+							<c:forEach var="job" items="${ jobs }">
+								<tr>
+									<td>${ job.jid }</td>
+									<td>${ job.jname }</td>
+									<td>${ job.employee.eid }</td>
+									<td>${ job.employee.ename }</td>
+								</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 				</form>
