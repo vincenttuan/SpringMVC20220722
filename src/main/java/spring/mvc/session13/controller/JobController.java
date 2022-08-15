@@ -50,6 +50,7 @@ public class JobController {
 		model.addAttribute("jobs", jobDao.query());
 		model.addAttribute("job", jobDao.get(jid));
 		model.addAttribute("employees", employeeDao.query());
+		model.addAttribute("pageCount", getPageCount());
 		return "session13/job";
 	}
 	
@@ -59,6 +60,7 @@ public class JobController {
 		model.addAttribute("_method", "POST");
 		model.addAttribute("jobs", jobDao.queryPage(offset));
 		model.addAttribute("employees", employeeDao.query());
+		model.addAttribute("pageCount", getPageCount());
 		return "session13/job";
 	}
 	
@@ -69,6 +71,7 @@ public class JobController {
 			model.addAttribute("jobs", jobDao.query());
 			model.addAttribute("job", job);
 			model.addAttribute("employees", employeeDao.query());
+			model.addAttribute("pageCount", getPageCount());
 			return "session13/job";
 		}
 		jobDao.add(job);
@@ -82,6 +85,7 @@ public class JobController {
 			model.addAttribute("jobs", jobDao.query());
 			model.addAttribute("job", job);
 			model.addAttribute("employees", employeeDao.query());
+			model.addAttribute("pageCount", getPageCount());
 			return "session13/job";
 		}
 		jobDao.update(job);
