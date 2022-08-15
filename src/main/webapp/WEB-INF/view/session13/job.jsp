@@ -62,7 +62,7 @@
 						<legend>
 							Job List | 分頁查詢
 							<c:forEach var="num" begin="1" end="${ pageCount }">
-								<a href="${ pageContext.request.contextPath }/mvc/jdbc/job/${ num }">${ num }</a>&nbsp;
+								<a href="${ pageContext.request.contextPath }/mvc/jdbc/job/page/${ num }">${ num }</a>&nbsp;
 							</c:forEach>
 						</legend>
 					</fieldset>
