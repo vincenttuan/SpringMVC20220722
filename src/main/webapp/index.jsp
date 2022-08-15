@@ -33,6 +33,10 @@
 			Session 13  Now <br>
 			<a href="${ pageContext.request.contextPath }/mvc/jdbc/now/">/spring.mvc/mvc/jdbc/now/</a>
 		</li>
+		<li>
+			Session 13  Employee <br>
+			<a href="${ pageContext.request.contextPath }/mvc/jdbc/employee/">/spring.mvc/mvc/jdbc/employee/</a>
+		</li>
 	</ol>
 	
 </body>

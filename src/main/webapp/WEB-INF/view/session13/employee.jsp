@@ -44,7 +44,17 @@
 		<tr>
 			<!-- Employee List -->
 			<td valign="top" colspan="4">
-				Employee List
+				<form class="pure-form">
+					<fieldset>
+						<legend>
+							Employee List
+						</legend>
+						<table class="pure-table pure-table-bordered" style="width: 100%">
+							
+						</table>
+					</fieldset>
+				</form>
+				
 			</td>
 		</tr>
 	</table>
