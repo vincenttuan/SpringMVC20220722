@@ -47,6 +47,15 @@ public class JobController {
 		return "session13/job";
 	}
 	
+	@GetMapping("/page/{num}")
+	public String page(@PathVariable("num") Integer num, Model model) {
+		int offset = (num - 1) * JobDao.LIMIT;
+		model.addAttribute("_method", "POST");
+		model.addAttribute("jobs", jobDao.queryPage(offset));
+		model.addAttribute("employees", employeeDao.query());
+		return "session13/job";
+	}
+	
 	@PostMapping("/")
 	public String add(@Valid Job job, BindingResult result, Model model) {
 		if(result.hasErrors()) {
