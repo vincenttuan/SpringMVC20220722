@@ -82,7 +82,7 @@
 							<c:forEach var="job" items="${ jobs }">
 								<tr>
 									<td>
-										<a href="./${ job.jid }" title="按我一下可以修改">
+										<a href="${ pageContext.request.contextPath }/mvc/jdbc/job/${ job.jid }" title="按我一下可以修改">
 											${ job.jid }
 										</a>
 									</td>
