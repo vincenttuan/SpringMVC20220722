@@ -36,7 +36,11 @@
 					modelAttribute="employee"
 					action="${ pageContext.request.contextPath }/mvc/jdbc/employee/">
 					<fieldset>
-						<legend>Employee Form</legend>
+						<legend>
+							<b>Employee Form</b>
+							&nbsp;|&nbsp; 
+							<a href="${ pageContext.request.contextPath }/mvc/jdbc/job/">Job Form</a>
+						</legend>
 						<input type="hidden" id="_method" name="_method" value="${ _method }" />
 						編號: <spform:input path="eid" readonly="true" /><p />
 						姓名: <spform:input path="ename" /><br />
