@@ -50,7 +50,11 @@
 									<td>${ job.jid }</td>
 									<td>${ job.jname }</td>
 									<td>${ job.employee.eid }</td>
-									<td>${ job.employee.ename }</td>
+									<td>
+										<a href="${ pageContext.request.contextPath }/mvc/jdbc/employee/${ job.employee.eid }" title="按我一下可以修改員工資料">
+											${ job.employee.ename }
+										</a>
+									</td>
 								</tr>
 							</c:forEach>
 						</tbody>
