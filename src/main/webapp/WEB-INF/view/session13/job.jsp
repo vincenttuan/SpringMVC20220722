@@ -28,7 +28,27 @@
 			</td>
 			<!-- Job List -->
 			<td valign="top" colspan="2">
-				Job List
+				<form class="pure-form">
+					<fieldset>
+						<legend>Job List</legend>
+					</fieldset>
+					<table class="pure-table puretable-bordered">
+						<thead>
+							<tr>
+								<th rowspan="2" valign="middle" align="center">編號</th>
+								<th rowspan="2" valign="middle" align="center">名稱</th>
+								<th colspan="2" align="center">員工資料</th>
+							</tr>
+							<tr>
+								<th>員編</th>
+								<th>姓名</th>
+							</tr>	
+						</thead>
+						<tbody>
+						
+						</tbody>
+					</table>
+				</form>
 			</td>
 			<!-- Job Bar Chart -->
 			<td valign="top">
