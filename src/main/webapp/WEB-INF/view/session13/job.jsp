@@ -59,7 +59,12 @@
 			<td valign="top" colspan="2">
 				<form class="pure-form">
 					<fieldset>
-						<legend>Job List</legend>
+						<legend>
+							Job List | 分頁查詢
+							<c:forEach var="num" begin="1" end="${ pageCount }">
+								<a href="${ pageContext.request.contextPath }/mvc/jdbc/job/${ num }">${ num }</a>&nbsp;
+							</c:forEach>
+						</legend>
 					</fieldset>
 					<table class="pure-table puretable-bordered">
 						<thead>
