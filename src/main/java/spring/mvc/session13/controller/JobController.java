@@ -48,7 +48,7 @@ public class JobController {
 	}
 	
 	@GetMapping("/page/{num}")
-	public String page(@PathVariable("num") Integer num, Model model) {
+	public String page(@ModelAttribute Job job, @PathVariable("num") Integer num, Model model) {
 		int offset = (num - 1) * JobDao.LIMIT;
 		model.addAttribute("_method", "POST");
 		model.addAttribute("jobs", jobDao.queryPage(offset));
