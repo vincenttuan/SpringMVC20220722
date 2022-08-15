@@ -50,7 +50,22 @@
 							Employee List
 						</legend>
 						<table class="pure-table pure-table-bordered" style="width: 100%">
-							
+							<thead>
+								<tr>
+									<th>編號</th><th>姓名</th><th>薪資</th><th>工作</th><th>建立時間</th>
+								<tr>
+							</thead>
+							<tbody>
+								<c:forEach var="emp" items="${ employees }">
+									<tr>
+										<td>${ emp.id }</td>
+										<td>${ emp.name }</td>
+										<td>${ emp.salary }</td>
+										<td>${ emp.jobs }</td>
+										<td>${ emp.createtime }</td>
+									</tr>
+								</c:forEach>
+							</tbody>
 						</table>
 					</fieldset>
 				</form>
