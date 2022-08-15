@@ -22,11 +22,30 @@
 </head>
 <body style="padding: 15px;">
 
-	<table>
+	<table style="width: 100%">
 		<tr>
 			<!-- Employee Form -->
 			<td valign="top">
-				Employee Form
+				<spform:form class="pure-form"
+					method="post"
+					modelAttribute="employee"
+					action="${ pageContext.request.contextPath }/mvc/jdbc/employee/">
+					<fieldset>
+						<legend>Employee Form</legend>
+						<input type="hidden" id="_method" name="_method" value="${ _method }" />
+						編號: <spform:input path="eid" readonly="true" /><p />
+						姓名: <spform:input path="ename" /><br />
+							 <spform:errors path="ename" cssClass="error" /><p />
+						薪資: <spform:input path="salary" /><br />
+							 <spform:errors path="salary" cssClass="error" /><p />
+						<button type="submit" ${ _method eq 'POST'?'':'disabled' } class="pure-button pure-button-primary">
+							新增
+						</button>
+						<button type="submit" ${ _method eq 'PUT'?'':'disabled' } class="pure-button pure-button-primary">
+							修改
+						</button>
+					</fieldset>
+				</spform:form>
 			</td>
 			<!-- Salary Column Chart -->
 			<td valign="top">
