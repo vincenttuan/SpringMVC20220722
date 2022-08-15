@@ -59,9 +59,13 @@
 								<c:forEach var="emp" items="${ employees }">
 									<tr>
 										<td>${ emp.eid }</td>
-										<td>${ emp.name }</td>
+										<td>${ emp.ename }</td>
 										<td>${ emp.salary }</td>
-										<td>${ emp.jobs }</td>
+										<td>
+											<c:forEach var="job" items="${ emp.jobs }">
+												${ job.jname }
+											</c:forEach>
+										</td>
 										<td>${ emp.createtime }</td>
 									</tr>
 								</c:forEach>
