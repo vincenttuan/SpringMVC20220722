@@ -30,11 +30,17 @@ public class JobController {
 	@Autowired
 	private EmployeeDao employeeDao;
 	
+	private int getPageCount() {
+		int pageCount = (int)Math.ceil((double)jobDao.getCount() / jobDao.LIMIT);
+		return pageCount;
+	}
+	
 	@GetMapping("/")
 	public String index(@ModelAttribute Job job, Model model) { // job.jsp 首頁
 		model.addAttribute("_method", "POST");
 		model.addAttribute("jobs", jobDao.query());
 		model.addAttribute("employees", employeeDao.query());
+		model.addAttribute("pageCount", getPageCount());
 		return "session13/job";
 	}
 	
