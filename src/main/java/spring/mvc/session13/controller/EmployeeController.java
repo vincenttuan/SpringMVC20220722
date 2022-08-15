@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,6 +32,14 @@ public class EmployeeController {
 		return "session13/employee";
 	}
 	
+	@GetMapping("/{eid}")
+	public String get(@PathVariable("eid") Integer eid, Model model) {
+		model.addAttribute("_method", "PUT");
+		model.addAttribute("employees", employeeDao.query());
+		model.addAttribute("employee", employeeDao.get(eid));
+		return "session13/employee";
+	}
+	
 	@PostMapping("/")
 	public String add(@Valid Employee employee, BindingResult result, Model model) {
 		if(result.hasErrors()) {
@@ -41,7 +50,8 @@ public class EmployeeController {
 		}
 		employeeDao.add(employee);
 		return "redirect:./";
-		
 	}
+	
+	
 	
 }
