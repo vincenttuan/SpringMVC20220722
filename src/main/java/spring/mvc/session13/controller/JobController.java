@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import spring.mvc.session13.entity.Job;
+import spring.mvc.session13.repository.EmployeeDao;
 import spring.mvc.session13.repository.JobDao;
 
 @Controller
@@ -26,10 +27,14 @@ public class JobController {
 	@Autowired
 	private JobDao jobDao;
 	
+	@Autowired
+	private EmployeeDao employeeDao;
+	
 	@GetMapping("/")
 	public String index(@ModelAttribute Job job, Model model) { // job.jsp 首頁
 		model.addAttribute("_method", "POST");
 		model.addAttribute("jobs", jobDao.query());
+		model.addAttribute("employees", employeeDao.query());
 		return "session13/job";
 	}
 	
@@ -38,6 +43,7 @@ public class JobController {
 		model.addAttribute("_method", "PUT");
 		model.addAttribute("jobs", jobDao.query());
 		model.addAttribute("job", jobDao.get(jid));
+		model.addAttribute("employees", employeeDao.query());
 		return "session13/job";
 	}
 	
@@ -47,6 +53,7 @@ public class JobController {
 			model.addAttribute("_method", "POST");
 			model.addAttribute("jobs", jobDao.query());
 			model.addAttribute("job", job);
+			model.addAttribute("employees", employeeDao.query());
 			return "session13/job";
 		}
 		jobDao.add(job);
@@ -59,6 +66,7 @@ public class JobController {
 			model.addAttribute("_method", "PUT");
 			model.addAttribute("jobs", jobDao.query());
 			model.addAttribute("job", job);
+			model.addAttribute("employees", employeeDao.query());
 			return "session13/job";
 		}
 		jobDao.update(job);
