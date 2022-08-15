@@ -18,7 +18,12 @@
 			color: #FF0000;
 		}
 	</style>
-	
+	<script type="text/javascript">
+		function changeMethodAndSubmit(methodValue) {
+			document.getElementById("_method").value = methodValue;
+			document.getElementById("employee").submit();
+		}
+	</script>
 </head>
 <body style="padding: 15px;">
 
@@ -43,6 +48,10 @@
 						</button>
 						<button type="submit" ${ _method eq 'PUT'?'':'disabled' } class="pure-button pure-button-primary">
 							修改
+						</button>
+						<button type="button" ${ _method eq 'PUT'?'':'disabled' } class="pure-button pure-button-primary"
+								onclick="changeMethodAndSubmit('DELETE')">
+							刪除
 						</button>
 						<p />
 						<spform:errors path="*" cssClass="error" />
