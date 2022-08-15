@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -18,10 +20,11 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeDao employeeDao;
 	
-	@GetMapping(value = "/query/json", produces = "application/json;charset=UTF-8")
-	@ResponseBody
-	public List<Employee> queryJson() {
-		return employeeDao.query();
+	@GetMapping("/")
+	public String index(@ModelAttribute Employee employee, Model model) { // employee.jsp 首頁
+		model.addAttribute("_method", "POST");
+		model.addAttribute("employees", employeeDao.query());
+		return "session13/employee";
 	}
 	
 }
