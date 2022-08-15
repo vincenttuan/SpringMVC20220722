@@ -58,7 +58,7 @@
 							<tbody>
 								<c:forEach var="emp" items="${ employees }">
 									<tr>
-										<td>${ emp.id }</td>
+										<td>${ emp.eid }</td>
 										<td>${ emp.name }</td>
 										<td>${ emp.salary }</td>
 										<td>${ emp.jobs }</td>
