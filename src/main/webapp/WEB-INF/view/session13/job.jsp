@@ -42,13 +42,8 @@
 						編號：<spform:input path="jid" readonly="true" /><p />
 						名稱：<spform:input path="jname" /><br />
 							 <spform:errors path="jname" cssClass="error" /><p />
-						員工：<spform:select path="eid"
-								items="${ employees }"
-								itemLabel="ename"
-								itemValue="eid"
-							 />
+						員工：
 						<p />
-						
 						<button type="submit" class="pure-button pure-button-primary" ${ _method eq 'POST'?'':'disabled' } >新增</button>
 						<button type="submit" class="pure-button pure-button-primary" ${ _method eq 'PUT'?'':'disabled' }>修改</button>
 						<button type="button" class="pure-button pure-button-primary" ${ _method eq 'PUT'?'':'disabled' } onclick="changeMethodAndSubmit('DELETE');">刪除</button>
