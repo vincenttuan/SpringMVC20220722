@@ -79,7 +79,11 @@
 							<tbody>
 								<c:forEach var="emp" items="${ employees }">
 									<tr>
-										<td>${ emp.eid }</td>
+										<td>
+											<a href="./${ emp.eid }" title="按我一下可以修改">
+												${ emp.eid }
+											</a>
+										</td>
 										<td>${ emp.ename }</td>
 										<td>${ emp.salary }</td>
 										<td>
