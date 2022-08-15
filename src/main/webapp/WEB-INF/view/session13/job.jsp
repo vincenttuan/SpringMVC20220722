@@ -18,13 +18,44 @@
 			color: #FF0000;
 		}
 	</style>
+	<script type="text/javascript">
+		function changeMethodAndSubmit(methodValue) {
+			document.getElementById("_method").value = methodValue;
+			document.getElementById("job").submit();
+		}
+	</script>
 </head>
 <body style="padding: 15px;">
 	<table >
 		<tr>
 			<!-- Job Form -->
 			<td valign="top">
-				Job Form
+				<spform:form class="pure-form" 
+				 method="post" 
+				 modelAttribute="job" 
+				 action="${ pageContext.request.contextPath }/mvc/jdbc/job/">
+					<fieldset>
+						<legend>
+							<a href="${ pageContext.request.contextPath }/mvc/jdbc/employee/">Employee form</a> | <b>Job form</b>
+						</legend>
+						<input type="hidden" name="_method" id="_method" value="${ _method }"/>
+						編號：<spform:input path="jid" readonly="true" /><p />
+						名稱：<spform:input path="jname" /><br />
+							 <spform:errors path="jname" cssClass="error" /><p />
+						員工：<spform:select path="eid"
+								items="${ employees }"
+								itemLabel="ename"
+								itemValue="eid"
+							 />
+						<p />
+						
+						<button type="submit" class="pure-button pure-button-primary" ${ _method eq 'POST'?'':'disabled' } >新增</button>
+						<button type="submit" class="pure-button pure-button-primary" ${ _method eq 'PUT'?'':'disabled' }>修改</button>
+						<button type="button" class="pure-button pure-button-primary" ${ _method eq 'PUT'?'':'disabled' } onclick="changeMethodAndSubmit('DELETE');">刪除</button>
+						<p />
+						<spform:errors path="*" cssClass="error" />
+					</fieldset>
+				</spform:form>
 			</td>
 			<!-- Job List -->
 			<td valign="top" colspan="2">
