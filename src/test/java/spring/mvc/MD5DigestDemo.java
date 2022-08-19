@@ -17,15 +17,18 @@ public class MD5DigestDemo {
 	}
 	
 	public static void main(String[] args) throws Exception {
+		// 鹽
+		String salt = "abc";
 		// 加密
 		String input = "1234"; 
-		String output = getEncryptString(input);
+		String output = getEncryptString(input + salt);
 		System.out.println("資料庫密碼欄位存放: " + output);
 		
 		// 登入
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("請輸入密碼: ");
 		String pwd = scanner.next();
+		pwd = pwd + "abc";
 		String pwdMD5 = getEncryptString(pwd);
 		System.out.println("使用者所輸入的密碼加密後的結果: " + pwdMD5);
 		
