@@ -21,6 +21,6 @@
 			</fieldset>
 			
 		</spform:form>
-		結果: ${ result }
+		結果: ${ result }<p />
 	</body>
 </html>
