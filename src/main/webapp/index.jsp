@@ -37,6 +37,10 @@
 			Session 13  Employee <br>
 			<a href="${ pageContext.request.contextPath }/mvc/jdbc/employee/">/spring.mvc/mvc/jdbc/employee/</a>
 		</li>
+		<li>
+			Session 14  Div (例外處理)<br>
+			<a href="${ pageContext.request.contextPath }/mvc/session14/div/">/spring.mvc/mvc/session14/div/</a>
+		</li>
 	</ol>
 	
 </body>
