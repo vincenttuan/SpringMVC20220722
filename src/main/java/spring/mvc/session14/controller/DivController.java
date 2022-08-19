@@ -33,9 +33,10 @@ public class DivController {
 	
 	// 捕獲使用者輸入格式不正確的例外, 數學錯誤的例外
 	@ExceptionHandler({BindException.class, ArithmeticException.class})
-	@ResponseBody
-	public String catchException(Exception ex, Model mode, HttpServletRequest request) {
+	public String catchException(Exception ex, Model model, HttpServletRequest request) {
 		String referer = request.getHeader("Referer");
-		return ex + ", " + referer;
+		model.addAttribute("ex", ex);
+		model.addAttribute("referer", referer);
+		return "session14/error";
 	}
 }
