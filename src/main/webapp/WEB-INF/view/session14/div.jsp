@@ -22,5 +22,7 @@
 			
 		</spform:form>
 		結果: ${ result }<p />
+		<hr />
+		${ global_map }
 	</body>
 </html>
