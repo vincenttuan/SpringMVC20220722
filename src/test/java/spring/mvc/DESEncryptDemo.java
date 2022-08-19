@@ -20,10 +20,8 @@ public class DESEncryptDemo {
 		// 解密
 		key = "C:/Users/student/eclipse-workspace-spring/spring.mvc/key/user.key"; // 密鑰位置
 		des = new DESEncryptService(key);
-		byte[] deMsg = des.decryptor(enMsg);
+		byte[] deMsg = des.decryptor(enMsg); // 假設已經從資料庫抓到 enMsg 密文
 		System.out.println("解密: " + new String(deMsg));
-		
-		
 		
 	}
 }
