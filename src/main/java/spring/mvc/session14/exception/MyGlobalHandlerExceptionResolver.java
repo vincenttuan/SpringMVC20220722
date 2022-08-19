@@ -16,7 +16,7 @@ public class MyGlobalHandlerExceptionResolver implements HandlerExceptionResolve
 			Exception ex) {
 		String referer = request.getHeader("Referer");
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("session17/error");
+		mv.setViewName("session14/error");
 		mv.addObject("referer", referer);
 		mv.addObject("ex", "全局異常捕獲: " + ex);
 		return mv;
