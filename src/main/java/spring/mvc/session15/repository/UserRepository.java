@@ -15,6 +15,7 @@ import spring.mvc.session15.entity.User;
  * */
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
+	
 	// 根據 name 來取得 User
 	User getByName(String name);
 	
