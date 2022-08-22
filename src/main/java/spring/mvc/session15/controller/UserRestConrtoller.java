@@ -3,6 +3,8 @@ package spring.mvc.session15.controller;
 import java.util.List;
 import java.util.Random;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +24,7 @@ public class UserRestConrtoller {
 	private UserRepository userRepository;
 	
 	@GetMapping("/auto_add") //自動新增 user 資料
+	@Transactional
 	public String addAuto() {
 		Faker faker = new Faker();
 		User user = new User();
