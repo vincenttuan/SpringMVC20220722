@@ -21,13 +21,13 @@ public class UserRestConrtoller {
 	private UserRepository userRepository;
 	
 	@GetMapping("/auto_add") //自動新增 user 資料
-	public List<User> addAuto() {
+	public String addAuto() {
 		Faker faker = new Faker();
 		User user = new User();
 		user.setName(faker.name().firstName());
 		user.setPassword(String.format("%04d", new Random().nextInt(1000)));
 		user.setBirth(faker.date().birthday());
 		userRepository.save(user);
-		return userRepository.findAll();
+		return user.toString();
 	}
 }
