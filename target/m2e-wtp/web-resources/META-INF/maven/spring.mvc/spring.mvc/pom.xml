@@ -182,6 +182,7 @@
 			<version>4.3.11.Final</version>
 		</dependency>
 		
+		<!-- Simple Logging Facade for Java, Java的簡單日誌記錄外觀（SLF4J）可作為各種日誌記錄框架 -->
 		<dependency>
     		<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
