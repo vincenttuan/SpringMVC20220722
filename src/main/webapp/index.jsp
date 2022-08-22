@@ -41,6 +41,11 @@
 			Session 14  Div (例外處理)<br>
 			<a href="${ pageContext.request.contextPath }/mvc/session14/div/">/spring.mvc/mvc/session14/div/</a>
 		</li>
+		<li>
+			Session 15  JPA<br>
+			<a href="${ pageContext.request.contextPath }/mvc/rest/user/auto_add">/spring.mvc/mvc/rest/user/auto_add 自動新增資料(有問題)</a><p />
+			<a href="${ pageContext.request.contextPath }/mvc/rest/user/">/spring.mvc/mvc/rest/user/ 查詢全部</a><p />
+		</li>
 	</ol>
 	
 </body>

@@ -30,4 +30,11 @@ public class UserRestConrtoller {
 		userRepository.save(user);
 		return user.toString();
 	}
+	
+	@GetMapping("/")
+	public List<User> query() {
+		return userRepository.findAll();
+	}
+	
+	
 }
